@@ -16,3 +16,4 @@ except (Exception, psycopg2.Error) as error:
     sys.exit(1)
 
     # this is about database connection
+    
