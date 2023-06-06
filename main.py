@@ -20,7 +20,7 @@ class DashBoard(QMainWindow):
         self.Logout = self.ui.pushButton_11
         self.Logout.clicked.connect(self.login)
     def login(init):
-        widget.setCurrentIndex(0)
+        widget.setCurrentIndex(1)
         
 
         ###############################
