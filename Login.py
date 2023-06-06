@@ -11,18 +11,22 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class LoginForm(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(866, 767)
+class LoginForm:
+    def __init__(self):
+        self.Form = QtWidgets.QWidget()
+        self.Form.show()
+        self.setupUi()
+    def setupUi(self):
+        self.Form.setObjectName("Form")
+        self.Form.resize(866, 767)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(34)
         sizePolicy.setVerticalStretch(50)
-        sizePolicy.setHeightForWidth(Form.sizePolicy().hasHeightForWidth())
-        Form.setSizePolicy(sizePolicy)
-        self.verticalLayout = QtWidgets.QVBoxLayout(Form)
+        sizePolicy.setHeightForWidth(self.Form.sizePolicy().hasHeightForWidth())
+        self.Form.setSizePolicy(sizePolicy)
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.Form)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.widget = QtWidgets.QWidget(Form)
+        self.widget = QtWidgets.QWidget(self.Form)
         self.widget.setStyleSheet("#Lemail{\n"
 "background-color:#e6f1f1;\n"
 "border:none;\n"
@@ -174,8 +178,8 @@ class LoginForm(object):
         self.horizontalLayout.addWidget(self.frame)
         self.verticalLayout.addWidget(self.widget)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(self.Form)
+        QtCore.QMetaObject.connectSlotsByName(self.Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -192,8 +196,6 @@ import resourc_rc
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
     ui = LoginForm()
-    ui.setupUi(Form)
-    Form.show()
+    
     sys.exit(app.exec_())

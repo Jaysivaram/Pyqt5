@@ -11,13 +11,17 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Register_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(739, 677)
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(Form)
+class Register_Form:
+    def __init__(self):
+        self.Form = QtWidgets.QWidget()
+        self.Form.show()
+        self.setupUi()
+    def setupUi(self):
+        self.Form.setObjectName("Form")
+        self.Form.resize(739, 677)
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.Form)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.widget = QtWidgets.QWidget(Form)
+        self.widget = QtWidgets.QWidget(self.Form)
         self.widget.setObjectName("widget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.widget)
         self.horizontalLayout.setObjectName("horizontalLayout")
@@ -164,8 +168,8 @@ class Register_Form(object):
         self.horizontalLayout.addWidget(self.frame)
         self.horizontalLayout_2.addWidget(self.widget)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(self.Form)
+        QtCore.QMetaObject.connectSlotsByName(self.Form)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -184,8 +188,5 @@ import resourc_rc
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
     ui = Register_Form()
-    ui.setupUi(Form)
-    Form.show()
     sys.exit(app.exec_())
