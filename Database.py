@@ -15,5 +15,3 @@ except (Exception, psycopg2.Error) as error:
     print("Error while connecting to PostgreSQL:", error)
     sys.exit(1)
 
-  
-    
